@@ -54,10 +54,10 @@ class ReActAgent:
 
             print(f"\n\n🔧 Action: {tool_name}({', '.join(args)})")
             # 只有终端命令才需要询问用户，其他的工具直接执行
-            should_continue = input(f"\n\n是否继续？（Y/N）") if tool_name == "run_terminal_command" else "y"
-            if should_continue.lower() != 'y':
-                print("\n\n操作已取消。")
-                return "操作被用户取消"
+            # should_continue = input(f"\n\n是否继续？（Y/N）") if tool_name == "run_terminal_command" else "y"
+            # if should_continue.lower() != 'y':
+            #     print("\n\n操作已取消。")
+            #     return "操作被用户取消"
 
             try:
                 observation = self.tools[tool_name](*args)
